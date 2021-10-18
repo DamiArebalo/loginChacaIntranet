@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- titulo y logo de la pagina -->
+	<link rel="icon" type="image/png" href="img/Logo_chaca.png">
+	<title>LoginChaca</title>
+	<!-- Metas y Linkeo de archivos -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no"/>
+	<link rel="stylesheet" type="text/css" href="css/estiloslogin.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<script src="js/backend.js"></script>
+	<!-- Linkeo de Fuentes -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+	<!-- Linkeo de Iconos de BOOSTRAP -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</head>
+<body>
+	<div class="pagina">
+		<div class="conteiner"> <!-- HEADER -->
+		<nav class="header">
+			<img src="img/logo_chaca.png">
+			<h1>LOGIN INTRANET <br>INSTITUCIONAL</h1>
+			<!-- Responsive Nav para PC -->
+			<ul id="screenPc">
+				<a href="https://www.tecnica6moron.edu.ar/"><li class="nav-item">Inicio</li></a>
+				<a href="https://www.tecnica6moron.edu.ar/biblioteca/biblioteca.pdf"><li class="nav-item">Biblioteca</li></a>
+				<a href="https://www.tecnica6moron.edu.ar/#Novedades"><li class="nav-item">Noticias</li></a>
+			</ul>
+			<!-- Responsive Nav para Mobile -->
+			<ul id="screenMobile">
+				<a class="nav__item__Mob" href="https://www.tecnica6moron.edu.ar/"><i class="bi bi-house"></i></a>
+				<a class="nav__item__Mob" href="https://www.tecnica6moron.edu.ar/biblioteca/biblioteca.pdf"><i class="bi bi-book"></i></a>
+				<a class="nav__item__Mob" href="https://www.tecnica6moron.edu.ar/#Novedades"><i class="bi bi-newspaper"></i></a>
+			</ul>
+		</nav>
+	</div>
+
+	<main><!-- MAIN -->
+		<div class="form1">
+			<div class="imgLogin">
+				<img src="img/ingresar.png">
+			</div>
+			<form>
+				<label>INGRESA A NUESTRA WEB</label>
+			
+				<div class="form__item">
+					<i class="bi bi-person-circle "></i>
+					<input type="text" class="form__item--in" name="user" id="user" placeholder="Nombre de Usuario">
+				</div><br>
+
+				<div class="form__item">
+					<i class="bi bi-key-fill "></i>
+					<input type="password" class="form__item--in"  name="contraseña" id="clave" placeholder="Contraseña" ><br>
+				</div>
+			
+				<a href="" class="form__item" >
+					<button class="btn" onclick="validar()">
+					<i class="bi bi-stop-circle"> INGRESAR </i>
+					</button>
+				</a>
+				<h3><a href="#">¿No tienes cuenta? REGISTRATE</a></h3>		
+			</form>
+			
+		</div>
+	</main>
+
+	<footer> <!-- FOOTER -->
+		<div class="foot__content">
+			<ul class="contacto">
+				<div class="contacto__R">
+					<label><b>REDES</b></label><br>
+					<br><li class="foot__item"><a href="#"><i class="bi-facebook"></i> Facebook</a></li>
+					<li class="foot__item"><a href="#"><i class="bi-instagram"></i> Instagram</a></li><br>
+				</div>
+				<div class="contacto__C">
+					<label><b>CONTACTO</b></label><br>
+					<br><li class="foot__item"><a href="#"><i class="bi bi-phone-vibrate-fill"></i> Telefono</a></li>
+					<li class="foot__item"><a href="#"><i class="bi bi-envelope-fill"></i> Direccion</a></li>
+					<li class="foot__item"><a href="#"><i class="bi bi-envelope-fill"></i> Secretaría</a></li>
+				</div>
+				
+			</ul>
+			<ul class="mapa">
+				<li><b>UBICACION DEL COLEGIO</b></li>
+				<li><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.272174534065!2d-58.61068388610481!3d-34.64782868044807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7647f712335%3A0x57ee593bc22af97b!2sE.+E.+S.+T.+N%C2%B0+6+%22Chacabuco%22+-+Mor%C3%B3n!5e0!3m2!1ses!2sar!4v1533501040672"></iframe></li>
+				
+			</ul>
+			<ul class="info">
+				<label><b>MAS INFORMACION</b></label><br>
+				<li class="foot__item">Dirección: Av. Rivadavia 17337</li>
+				<li class="foot__item">Localidad: Morón</li>
+				<li class="foot__item">Provincia: Buenos Aires</li>
+			</ul>
+
+			<ul class="copy">
+				<li class="foot__item">© Damian Arebalo 7°3 2021</li>
+			</ul>
+
+		</div>
+
+	</footer>
+	</div>
+	
+	
+
+</body>
+</html>
