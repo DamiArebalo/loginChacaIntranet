@@ -24,55 +24,69 @@
 </head>
 <body>
 	<div class="pagina">
-		<div class="conteiner"> <!-- HEADER -->
+		<!-- HEADER -->
 		<nav class="header">
-			<img src="img/logo_chaca.png">
-			<h1>LOGIN INTRANET <br>INSTITUCIONAL</h1>
+			
+			<img class="header__logo" src="img/logo_chaca.png">
+			
+			
+			<h1 class="header__titulo">LOGIN INTRANET <br>INSTITUCIONAL</h1>
 			<!-- Responsive Nav para PC -->
-			<ul id="screenPc">
+			<ul class="screenPc">
 				<a href="https://www.tecnica6moron.edu.ar/"><li class="nav-item">Inicio</li></a>
 				<a href="https://www.tecnica6moron.edu.ar/biblioteca/biblioteca.pdf"><li class="nav-item">Biblioteca</li></a>
 				<a href="https://www.tecnica6moron.edu.ar/#Novedades"><li class="nav-item">Noticias</li></a>
 			</ul>
 			<!-- Responsive Nav para Mobile -->
-			<ul id="screenMobile">
+			<ul class="screenMobile">
 				<a class="nav__item__Mob" href="https://www.tecnica6moron.edu.ar/"><i class="bi bi-house"></i></a>
 				<a class="nav__item__Mob" href="https://www.tecnica6moron.edu.ar/biblioteca/biblioteca.pdf"><i class="bi bi-book"></i></a>
 				<a class="nav__item__Mob" href="https://www.tecnica6moron.edu.ar/#Novedades"><i class="bi bi-newspaper"></i></a>
 			</ul>
 		</nav>
-	</div>
+		
 
-	<main><!-- MAIN -->
-		<div class="form1">
-			<div class="imgLogin">
-				<img src="img/ingresar.png">
-			</div>
-			<form>
-				<label>INGRESA A NUESTRA WEB</label>
-			
-				<div class="form__item">
-					<i class="bi bi-person-circle "></i>
-					<input type="text" class="form__item--in" name="user" id="user" placeholder="Nombre de Usuario">
-				</div><br>
+		<main><!-- MAIN -->
+			<div class="form1">
 
-				<div class="form__item">
-					<i class="bi bi-key-fill "></i>
-					<input type="password" class="form__item--in"  name="contraseña" id="clave" placeholder="Contraseña" ><br>
+				<!-- ----IMAGEN DE PUERTA---- -->
+				<div class="imgLogin">
+					<img src="img/ingresar.png">
 				</div>
-			
-				<a href="" class="form__item" >
-					<button class="btn" onclick="validar()">
-					<i class="bi bi-stop-circle"> INGRESAR </i>
+
+				<!-- ---INICIO DE FORMULARIO -->
+
+				<form>
+					<label>INGRESA A NUESTRA WEB</label>
+					
+					<!-- INPUT 1 -->
+					<div class="form__item">
+						<i class="bi bi-person-circle "></i>
+						<input type="text" class="form__item--in" name="user" id="user" placeholder="Nombre de Usuario">
+					</div><br>
+					
+					<!-- INPUT 2 -->
+					<div class="form__item">
+						<i class="bi bi-key-fill "></i>
+						<input type="password" class="form__item--in"  name="contraseña" id="clave" placeholder="Contraseña" ><br>
+					</div>
+
+					<!-- BOTON -->
+				
+					<button class="btn form__item" onclick="validar()" id="btn">
+						<i class="bi bi-stop-circle"> INGRESAR </i>
 					</button>
-				</a>
-				<h3><a href="#">¿No tienes cuenta? REGISTRATE</a></h3>		
-			</form>
-			
-		</div>
-	</main>
+					
+
+					<!-- REGISTRATE -->
+					<h3><a href="#">¿No tienes cuenta? REGISTRATE</a></h3>		
+				</form>
+				
+			</div>
+		</main>
 
 	<footer> <!-- FOOTER -->
+		
 		<div class="foot__content">
 			<ul class="contacto">
 				<div class="contacto__R">
@@ -101,10 +115,12 @@
 			</ul>
 
 			<ul class="copy">
-				<li class="foot__item">© Damian Arebalo 7°3 2021</li>
+				<li class="foot__item"><b>© Damian Arebalo 7°4 2021</b></li>
 			</ul>
 
 		</div>
+	
+		
 
 	</footer>
 	</div>
