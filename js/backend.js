@@ -19,7 +19,9 @@ function validar() {
 		alert("usuario minimo de 4 caracteres");
 		
 	}else{
-		location.href="https://www.tecnica6moron.edu.ar/"
+		btn.addEventListener(('submit'), (e) => {
+			location.href="https://www.tecnica6moron.edu.ar/";
+		})
 	}
 }	
 
