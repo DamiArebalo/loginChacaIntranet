@@ -1,0 +1,472 @@
+.pagina{
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+body{
+    background-color:#94adf3 ;
+    font-family: 'Quicksand', sans-serif;  
+}
+
+/* -----------BARRA DE NAVEGACION---------- */
+
+/* POSICIONAMIENTO */
+.header{
+    
+    display: flex;
+    justify-content: space-between;
+    max-height: 200px; 
+    background: #194ee6;
+	padding: 30px 20px;
+    align-items: center;
+
+    
+}
+/* ----LOGO CHACABUCO---- */
+.header__logo{
+    max-height: 140px;
+
+}
+
+/* ----TITULO---- */
+.header__titulo{
+    border-left: 3px solid #75c3f0;
+	padding:  10px;
+	color: #75c3f0;
+	text-shadow: 2px 3px 5px #0a1f5c;
+	margin-left: 2px;
+}
+
+/* OPCIONES DE NAVEGACION (PC) */
+
+.screenPc{
+    display: flex;
+	list-style: none;
+	font-size: 20px;
+	/* position: relative;	 */
+    padding: 0px 10px;
+}
+
+.nav-item {
+	text-decoration: none;
+	margin: 15px;
+	color: #ffffff;
+	transition:.5s ease all ; /*Transicion info*/
+    font-size: 25px;	
+
+}
+
+/*Animacion para cuando pasa el Mause por encima*/
+
+.nav-item:hover{
+	background-color: #7595f0;
+	border-radius: 10px;
+	font-size: 35px;
+
+}
+
+
+/*----Responsive Bar NAvegation-----*/
+
+@media screen and (min-width: 965px){ 
+    .screenMobile{
+        display: none; /*Oculto el screenMobile*/
+        }
+    
+}
+    
+@media screen and (min-width: 300px)  and (max-width: 965px){
+    .screenPc{
+         display: none; /*Oculto el screenPC*/
+    
+    
+    }
+    
+    .screenMobile{
+        display: flex;
+        position: relative;
+    }
+    .nav__item__Mob{
+        text-decoration: none;
+        margin: 15px;
+        color: #ffffff;
+    }
+
+    /*Animacion para cuando pasa el Mause por encima*/
+    .screenMobile i{
+        transition: .5s ease all;
+    }
+
+    .screenMobile i:hover{
+        background-color: #7595f0;
+        background-size:  200px;
+        border-radius: 10px;
+        font-size: 30px
+    }
+                
+}
+
+/* ---------FORMULARIO---------- */
+.registro{
+	background: linear-gradient(to bottom, #3d6df5, #337eff);
+	
+	margin: 50px 30px;
+	border-radius: 40px;
+	box-shadow: 5px 10px 15px #280df3;
+	border: 5px inset #194ee6 ;
+    padding: 20px 10px;
+}
+
+
+.form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin: 30px;
+}
+
+.form h2{
+    grid-column: span 2;
+    text-align: center;
+    border-bottom: 3px solid #233b85;
+    
+}
+.form__label{
+    display: block;
+    font-weight: 500;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.form__grupo--input{
+    position: relative;
+}
+
+.form__input{
+    width: 100%;
+    background: #d3e0f8d8;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+}
+.form__input::placeholder{
+    color: #0a0a0a;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.form__input:focus{
+    border: 3px solid blue;
+    outline: none;
+    box-shadow: 3px 0px 10px hsl(0, 0%, 9%);
+}
+
+/* -----PARRAFO DE ERROR----- */
+.form__input-error{
+    font-size: 15px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.form__input-error-activo{
+    display: block;
+}
+
+/* --------ICONO DE ESTADO DEL INPUT --------- */
+.form__validacion-estado{
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 15px;
+    opacity: 0;
+}
+
+/* ----------ALINEACION DE BOTON Y MENSAJE DE ERROR--------- */
+.form__mensaje,.form__grupo-btn{
+    grid-column: span 2;
+}
+
+
+/* ---------MENSAJE DE ERROR------- */
+.form__mensaje{
+    height: 45px;
+    line-height: 45px;
+    background: #e01414cb;
+    text-align: center;
+    padding: 0px 15px;
+    border-radius: 10px;
+    display: none;
+}
+
+.form__mensaje-activo{
+    display: block;
+}
+
+/* ------------BOTON----------- */
+.form__grupo-btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form__btn{
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    color: #d9dff2;
+    background: #0204a0;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .1s ease all; 
+}
+
+.form__btn:hover{
+    box-shadow: 3px 0px 30px rgba(163,163,163,1);
+}
+
+/* ------- MENSAJE DE EXITO ------------*/
+
+.form__exito{
+    font-size: 20px ;
+    color: aquamarine;
+    text-transform: uppercase;
+    margin-top: 15px;
+    display: none;
+}
+
+.form__exito-activo{
+    display: block;
+}
+
+/* -----ESTILOS PARA VALIDACION-------- */
+.formulario__grupo-correcto .form__validacion-estado{
+    color: #02d849;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .form__validacion-estado{
+    color: #eb1b1b;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .form__label{
+    color: #ff1616;
+}
+.formulario__grupo-incorrecto .form__input{
+    border: 3px solid #ff1616;
+}
+
+
+/* -----RESPONSIVE FORMULARIO---------*/
+@media screen and (min-width: 300px)  and (max-width: 965px) {
+    .form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 25px;
+        margin: 30px;
+    };
+    .form__mensaje,.form__grupo-btn{
+        grid-column: 1;
+    }
+
+    .form h2{
+        grid-column: 1;
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+/*-------------footer---------------*/
+
+
+/*links*/
+
+footer a{
+	text-decoration: none;
+	color: #1a1a1a;
+	border: 2px solid #1a1a1a;
+	padding: 5px;
+	border-radius: 30px;
+	transition: .5s ease all;
+}
+
+footer a:hover{
+    border-radius: 10px;
+    background-size: 30px;
+	background: #d9dff2;
+}
+
+/*Alineacion y color*/
+.foot__content{
+    align-content: end;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows:  auto 1fr;
+	background: #b3b3b3;
+	color: #1a1a1a;
+	padding: 15px;
+	font-family: 'Quicksand', sans-serif;
+	
+}
+
+footer li{
+	list-style: none;
+}
+
+/*---Contacto---*/
+.contacto{
+	text-align: center;
+	grid-row: 1;
+	grid-column: 1;
+	border-right: 3px solid rgb(0, 0, 0);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.contacto__R{
+	grid-column: 1;
+}
+.contacto__C{
+	grid-column: 2;
+}
+
+.contacto li{
+	padding: 15px;
+	text-decoration: none;
+}
+
+/*--Mapa del colegio--*/
+
+.mapa{
+	object-position: center;
+	grid-row: 1;
+	grid-column: 2;
+	padding-left:  30px;
+	padding-right:   30px;  
+	text-align: center;
+	margin: auto;
+}
+
+.mapa iframe{
+	margin-top: 15px;
+}
+
+/*--Mas Informacion--*/
+.info{
+	text-align: center;
+	grid-row: 1;
+	grid-column: 3;
+	border-left: 3px solid black;
+	padding: 15px 0px;
+	margin: 10px 0px;
+	
+}
+
+/*--Copyright--*/
+
+.copy{
+	margin-top: 10px;
+	grid-row: 2;
+	grid-column: 1 /span 3;
+	text-align: center;
+}
+
+/*responsive footer mobile*/
+@media screen and (min-width: 300px)  and (max-width: 965px){
+
+
+
+	/*--Alineacion--*/
+	.foot__content{
+		display: grid;
+		grid-template-columns: 1fr ;
+		grid-template-rows:  repeat(3, 1fr) auto;
+		height: 100%;
+		background: #b3b3b3;
+		color: #1a1a1a;
+		padding: 10px;
+		font-family: 'Quicksand', sans-serif;
+	
+	}
+
+	/*--contacto--*/
+	.contacto{
+		text-align: center;
+		grid-row: 2;
+		grid-column: 1;
+		border-right: none;
+		border-bottom: 3px solid black;
+		border-top: 3px solid black;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr; 
+
+	}
+
+	.contacto__R{
+		grid-row:  1;
+		grid-column: 1;
+		margin-top:  10px;
+	}
+	.contacto__C{
+		margin-bottom:15px;
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.contacto li{
+		padding: 10px;
+		
+	}
+
+	/*--Mapa del colegio--*/
+	.mapa{
+		object-position: center;
+		grid-row: 1;
+		grid-column: 1;
+		padding-left:  30px;
+		padding-right:   30px;  
+		text-align: center;
+		margin: auto;
+		margin: 15px 0px;
+		
+
+	}
+
+	/*--Mas info--*/
+	.info{
+		text-align: center;
+		grid-row: 3;
+		grid-column: 1;
+		border: none;
+		border-bottom:  3px solid #0a0a0a;
+		margin: 25px 0px;
+		padding: 15px 0px;
+	}
+
+	.info li{
+		padding: 10px;
+	}
+
+	/*Copyright*/
+	.copy{
+		margin-top: 10px;
+		grid-row: 4;
+		grid-column: 1;
+		text-align: center;
+	}
+}
