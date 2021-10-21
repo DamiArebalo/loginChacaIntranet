@@ -1,5 +1,6 @@
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
+const btn = document.getElementById('btn');
 const expresiones={
 	nombre: /^[a-zA-ZÁ-ÿ\s]{3,40}$/, //letras y espacios pueden llevar acentos;
 	usuario: /^[a-zA-Z0-9\-\_\.]{4,20}$/, //letras, numeros, guio, guion bajo y punto
@@ -11,115 +12,89 @@ const expresiones={
 const validaForm = (e) =>{
 	switch(e.target.name){
 		case"nombre":
-			if(expresiones.nombre.test(e.target.value)){
-				document.getElementById('grupo__nombre').classList.remove('formulario__grupo-incorrecto');
-				document.getElementById('grupo__nombre').classList.add('formulario__grupo-correcto');
-				document.querySelector('#grupo__nombre i').classList.remove('bi-x-circle-fill');
-				document.querySelector('#grupo__nombre i').classList.add('bi-check-circle-fill');
-				document.querySelector('#grupo__nombre .form__input-error').classList.remove('form__input-error-activo');
-			}else{
-				document.getElementById('grupo__nombre').classList.add('formulario__grupo-incorrecto');
-				document.getElementById('grupo__nombre').classList.remove('formulario__grupo-correcto');
-				document.querySelector('#grupo__nombre i').classList.add('bi-x-circle-fill');
-				document.querySelector('#grupo__nombre i').classList.remove('bi-check-circle-fill');
-				document.querySelector('#grupo__nombre .form__input-error').classList.add('form__input-error-activo');
-			}
+			validaCampo(expresiones.nombre, e.target, 'nombre');
 		break;
 		case"usuario":
-			if(expresiones.usuario.test(e.target.value)){
-				document.getElementById('grupo__usuario').classList.remove('formulario__grupo-incorrecto');
-				document.getElementById('grupo__usuario').classList.add('formulario__grupo-correcto');
-				document.querySelector('#grupo__usuario i').classList.remove('bi-x-circle-fill');
-				document.querySelector('#grupo__usuario i').classList.add('bi-check-circle-fill');
-				document.querySelector('#grupo__usuario .form__input-error').classList.remove('form__input-error-activo');
-			}else{
-				document.getElementById('grupo__usuario').classList.add('formulario__grupo-incorrecto');
-				document.getElementById('grupo__usuario').classList.remove('formulario__grupo-correcto');
-				document.querySelector('#grupo__usuario i').classList.add('bi-x-circle-fill');
-				document.querySelector('#grupo__usuario i').classList.remove('bi-check-circle-fill');
-				document.querySelector('#grupo__usuario .form__input-error').classList.add('form__input-error-activo');
-			}
+			validaCampo(expresiones.usuario, e.target, 'usuario');
 		break;
 		case"password":
-			if(expresiones.password.test(e.target.value)){
-				document.getElementById('grupo__password').classList.remove('formulario__grupo-incorrecto');
-				document.getElementById('grupo__password').classList.add('formulario__grupo-correcto');
-				document.querySelector('#grupo__password i').classList.remove('bi-x-circle-fill');
-				document.querySelector('#grupo__password i').classList.add('bi-check-circle-fill');
-				document.querySelector('#grupo__password2 .form__input-error').classList.remove('form__input-error-activo');
-			}else{
-				document.getElementById('grupo__password').classList.add('formulario__grupo-incorrecto');
-				document.getElementById('grupo__password').classList.remove('formulario__grupo-correcto');
-				document.querySelector('#grupo__password i').classList.add('bi-x-circle-fill');
-				document.querySelector('#grupo__password i').classList.remove('bi-check-circle-fill');
-				document.querySelector('#grupo__password .form__input-error').classList.add('form__input-error-activo');
-			}
+		validaCampo(expresiones.password, e.target, 'password');
 		break;
 		case"password2":
-			if(expresiones.password.test(e.target.value)){
-				document.getElementById('grupo__password2').classList.remove('formulario__grupo-incorrecto');
-				document.getElementById('grupo__password2').classList.add('formulario__grupo-correcto');
-				document.querySelector('#grupo__password2 i').classList.remove('bi-x-circle-fill');
-				document.querySelector('#grupo__password2 i').classList.add('bi-check-circle-fill');
-				document.querySelector('#grupo__password2 .form__input-error').classList.remove('form__input-error-activo');
-			}else{
-				document.getElementById('grupo__password2').classList.add('formulario__grupo-incorrecto');
-				document.getElementById('grupo__password2').classList.remove('formulario__grupo-correcto');
-				document.querySelector('#grupo__password2 i').classList.add('bi-x-circle-fill');
-				document.querySelector('#grupo__password2 i').classList.remove('bi-check-circle-fill');
-				document.querySelector('#grupo__password2 .form__input-error').classList.add('form__input-error-activo');
-
-			}
+			validaPassword2();
 		break;
 		case"correo":
-			if(expresiones.correo.test(e.target.value)){
-				document.getElementById('grupo__correo').classList.remove('formulario__grupo-incorrecto');
-				document.getElementById('grupo__correo').classList.add('formulario__grupo-correcto');
-				document.querySelector('#grupo__correo i').classList.remove('bi-x-circle-fill');
-				document.querySelector('#grupo__correo i').classList.add('bi-check-circle-fill');
-				document.querySelector('#grupo__correo .form__input-error').classList.remove('form__input-error-activo');
-			}else{
-				document.getElementById('grupo__correo').classList.add('formulario__grupo-incorrecto');
-				document.getElementById('grupo__correo').classList.remove('formulario__grupo-correcto');
-				document.querySelector('#grupo__correo i').classList.add('bi-x-circle-fill');
-				document.querySelector('#grupo__correo i').classList.remove('bi-check-circle-fill');
-				document.querySelector('#grupo__correo .form__input-error').classList.add('form__input-error-activo');
-			}
+			validaCampo(expresiones.correo, e.target, 'correo');
 		break;
 		case"telefono":
-			if(expresiones.telefono.test(e.target.value)){
-				document.getElementById('grupo__telefono').classList.remove('formulario__grupo-incorrecto');
-				document.getElementById('grupo__telefono').classList.add('formulario__grupo-correcto');
-				document.querySelector('#grupo__telefono i').classList.remove('bi-x-circle-fill');
-				document.querySelector('#grupo__telefono i').classList.add('bi-check-circle-fill');
-				document.querySelector('#grupo__telefono .form__input-error').classList.remove('form__input-error-activo');
-			}else{
-				document.getElementById('grupo__telefono').classList.add('formulario__grupo-incorrecto');
-				document.getElementById('grupo__telefono').classList.remove('formulario__grupo-correcto');
-				document.querySelector('#grupo__telefono i').classList.add('bi-x-circle-fill');
-				document.querySelector('#grupo__telefono i').classList.remove('bi-check-circle-fill');
-				document.querySelector('#grupo__telefono .form__input-error').classList.add('form__input-error-activo');
-			}
+			validaCampo(expresiones.telefono, e.target, 'telefono');
 		break;
 		
 	}
 }
 
-const validaCampo = ()=>{
-
+const validaCampo = (expresion, input, campo)=>{
+	if(expresion.test(input.value)){
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('bi-x-circle-fill');
+		document.querySelector(`#grupo__${campo} i`).classList.add('bi-check-circle-fill');
+		document.querySelector(`#grupo__${campo} .form__input-error`).classList.remove('form__input-error-activo');
+		campos[campo] = true;
+	}else{
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('bi-x-circle-fill');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('bi-check-circle-fill');
+		document.querySelector(`#grupo__${campo} .form__input-error`).classList.add('form__input-error-activo');
+		campos[campo]= true;
+	}
 }
+const  validaPassword2 = () =>{
+	const inputpassword1 = document.getElementById('password');
+	const inputpassword2 = document.getElementById('password2');
 
+	if(inputpassword1.value !== inputpassword2.value){
+		document.getElementById(`grupo__password2`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__password2 i`).classList.add('bi-x-circle-fill');
+		document.querySelector(`#grupo__password2 i`).classList.remove('bi-check-circle-fill');
+		document.querySelector(`#grupo__password2 .form__input-error`).classList.add('form__input-error-activo');
+		campos[password]=false;
+	}else{
+		document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__password2`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__password2 i`).classList.remove('bi-x-circle-fill');
+		document.querySelector(`#grupo__password2 i`).classList.add('bi-check-circle-fill');
+		document.querySelector(`#grupo__password2 .form__input-error`).classList.remove('form__input-error-activo');
+		campos[password]=true;
+	}
+}
 inputs.forEach((input)=>{
 	input.addEventListener('keyup', validaForm)
 	input.addEventListener('blur', validaForm)
+});
+
+const campos = {
+	nombre: false,
+	usuario: false,
+	password: false,
+	correo: false,
+	telefono: false 
+}
+	
+btn.addEventListener('submit', (e) => {
+	e.preventDefault();
+	if(campos.nombre  && campos.usuario && campos.password && campos.pasword2 && campos.correo && campos.telefono){
+	
+		console.logo('no funca');
+		document.getElementById('form__exito').classList.remove('form__exito-activo');
+		// setTimeout(()=>{
+			
+		// document.getElementById('form__exito').classList.remove('form__exito-activo');
+		// }, 5000);
+	
+	}
 })
 
-	
-// formulario.addEventListener('submit', (e) => {
-// 	location.href("./login.html";)
-// })
-
-
-
-	
 
