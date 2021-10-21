@@ -119,7 +119,7 @@ body{
 	border: 5px inset #194ee6 ;
 }
 
-form{
+.formulario{
 	padding: 20px;
 	margin: 50px;
 	display: flex;
@@ -136,38 +136,111 @@ form{
 }	
 
 /*INPUTS*/
-.form__item{
+/* .form__grupo{
 	margin: auto;
+	padding: 20px;
 }
-.form__item--in{
+.form__input{
 	width: 200px;
 	margin: auto;
 	background: transparent;
 	border:none;
 	border-bottom: 1px solid #280df3;
 	padding: 15px 0px; 
-
 	transition: width 1s, border-bottom .5s;
+}
+.
+
+.form__input::placeholder{
+	color: #b0a8ee; 
+	text-transform: uppercase;
 
 }
 
-.form__item--in::placeholder{
-	color: #270df2; 
-
-}
-
-.form__item--in:focus{
+.form__item-input:focus{
 	width: 250px;
 	background: #3db2f577; 
 	border-style: none;
 	border-bottom: 1px solid #7d6df8;
 	
+} */
+
+.form__label{
+    display: block;
+    font-weight: 500;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.form__grupo--input{
+    position: relative;
+}
+
+.form__input{
+    width: 100%;
+    background: #d3e0f8d8;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+}
+.form__input::placeholder{
+    color: #0a0a0a;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.form__input:focus{
+    border: 3px solid blue;
+    outline: none;
+    box-shadow: 3px 0px 10px hsl(0, 0%, 9%);
+}
+
+/* -----PARRAFO DE ERROR----- */
+.form__input-error{
+    font-size: 15px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.form__input-error-activo{
+    display: block;
+}
+
+/* --------ICONO DE ESTADO DEL INPUT --------- */
+.form__validacion-estado{
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 15px;
+    opacity: 0;
+}
+
+/* -----ESTILOS PARA VALIDACION-------- */
+.formulario__grupo-correcto .form__validacion-estado{
+    color: #02d849;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .form__validacion-estado{
+    color: #eb1b1b;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .form__label{
+    color: #ff1616;
+}
+.formulario__grupo-incorrecto .form__input{
+    border: 3px solid #ff1616;
 }
 
 
 
 /*titulo del formulario*/
-.form1 label{
+.form1 h2{
 	font-size: 30px;
 	color: #270df2;
 	text-align: center;
@@ -193,11 +266,32 @@ form{
 	background: #147cb8;
 }
 
+.btn:hover{
+	box-shadow: 3px 0px 30px rgb(88, 197, 224);
+}
+
 .btn i{
 	font-family: 'Ubuntu Condensed', sans-serif;
 	margin: auto;
 	align-items: center;
 	justify-content: left;
+}
+
+
+/* ---------MENSAJE DE ERROR------- */
+.form__mensaje{
+    height: 45px;
+    line-height: 45px;
+    background: #e01414cb;
+    text-align: center;
+    padding: 0px 15px;
+    border-radius: 10px;
+    display: none;
+	margin: 15px;
+}
+
+.form__mensaje-activo{
+    display: block;
 }
 
 /*Registrate*/

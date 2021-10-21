@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no"/>
 	<link rel="stylesheet" type="text/css" href="css/estiloslogin.css">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
-	<script src="js/validaLogin.js"></script>
+	
 	<!-- Linkeo de Fuentes -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,30 +56,44 @@
 
 				<!-- ---INICIO DE FORMULARIO -->
 
-				<form>
-					<label>INGRESA A NUESTRA WEB</label>
+				<form class="formulario" id="formulario">
+					<h2>INGRESA A NUESTRA WEB</h2>
 					
 					<!-- INPUT 1 -->
-					<div class="form__item">
-						<i class="bi bi-person-circle "></i>
-						<input type="text" class="form__item--in" name="user" id="user" placeholder="Nombre de Usuario">
-					</div><br>
+					<div class="form__grupo " id="grupo__user">
+                        <label for="user" class="form__label">Nombre de Usuario</label>
+						<div class="form__grupo--input">
+						    <input type="text" class="form__input" name="user" id="user" placeholder="Nombre de usuario">
+                            <i class="form__validacion-estado bi bi-x-circle-fill"></i>
+                        </div>
+                        <p class="form__input-error">El nombre de usuario es incorrecto</p>
+					</div>
 					
 					<!-- INPUT 2 -->
-					<div class="form__item">
-						<i class="bi bi-key-fill "></i>
-						<input type="password" class="form__item--in"  name="contraseña" id="clave" placeholder="Contraseña" ><br>
+					<div class="form__grupo" id="grupo__password">
+                        <label for="password" class="form__label">Contraseña</label>
+						<div class="form__grupo--input">
+						    <input type="password" class="form__input" name="password" id="password" placeholder="Contraseña">
+                            <i class="form__validacion-estado bi bi-x-circle-fill"></i>
+                        </div>
+                        <p class="form__input-error">La constraseña es incorrecta</p>
 					</div>
 
 					<!-- BOTON -->
-				
-					<button class="btn form__item" onclick="validar()" id="btn">
-						<i class="bi bi-stop-circle"> INGRESAR </i>
-					</button>
+					<div class="form__btn">
+						<button type="submit" class="btn" id="btn">INGRESAR </button>
+					</div>
+
+					 <!-- MESAJE DE ERROR -->
+					 <div class="form__mensaje" id="form__mensaje">
+                        <p><i class="bi bi-exclamation-triangle-fill"></i> <b>Error:</b> Porfavor complete los campos erroneos  </p>
+
+                    </div>
+					
 					
 
 					<!-- REGISTRATE -->
-					<h3><a href="#">¿No tienes cuenta? REGISTRATE</a></h3>		
+					<h3><a href="registro.html">¿No tienes cuenta? REGISTRATE</a></h3>		
 				</form>
 				
 			</div>
@@ -126,6 +140,6 @@
 	</div>
 	
 	
-
+	<script src="js/validaLogin.js"></script>
 </body>
 </html>
